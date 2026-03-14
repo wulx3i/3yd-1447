@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>! 🥳:D عيد سعيد</title>
+
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+        *{}
+        body{
+            padding: 0;
+            margin: 0; 
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+            background: #f5ede4;
+            }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin:40px auto ;
+            max-width: 600px;
+            min-height: 600px;
+            padding: 60px 10px;
+            width: 40%;
+            height: 600px;
+            border: 3px solid #c97b7b;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(219, 112, 147, 0.2);
+            
+        }
+
+        p{
+            font-size: 30px;
+            color: #9b6040;
+        }
+        
+        span{
+            color:#c97b7b;
+            font-weight: 800;
+            
+        }
+
+        .btn{
+            padding: 10px 20px;
+            background:transparent;
+            border: 1px solid #c97b7b;
+            border-radius: 14px;
+            color: #c97b7b;
+            transition: .3s all ease-in-out;
+            font-weight: bold;
+            position: relative;
+            z-index: 11;   /*عشان نضمن انه فوق الصوره */
+        }
+
+        .btn:hover{
+            cursor: pointer;
+            border-radius: 20px;
+            background: #c97b7b;
+            color: #fff;
+            border: 2px solid #fff;
+            transform: scale(1.1);
+        }
+
+        .overlay-img {
+           position: absolute;
+           margin: auto 535px;
+           width: 620px;       
+           height: 100%;      
+           object-fit: cover; 
+           pointer-events: none; 
+           z-index: 10;      
+        }
+
+        img{
+            position: absolute;
+            z-index: 13;
+            width:700px; 
+            transform: rotateX('45deg');
+            margin: -230px;
+        }
+        .two{
+            position: absolute;
+            z-index: 13;
+            width:700px; 
+            transform: rotateX('-45deg');
+            margin: -260px 1200px;
+        }
+    </style>
+</head>
+<body>
+    <img src="theme.png" alt="1">
+    <img src="theme.png" alt="2" class="two">
+    <img src="bg1.png" alt="background" class="overlay-img">
+    <div class="container">
+        
+        <!-- <h2>مُــعــايــدة</h2> -->
+       <br> <p>أُهَنَّئُكم بحلــول</p>
+        <p><span style="font-size: 50px;" > عيد الفطر المُبارك </span>
+            <br>جَعَل الله عيـــدكُم فَرَحًا بأَعمال قُبلت 
+            <br>وَذُنُـــوب محِيَـــت ودَرَجَـــات رُفِعــت</p>
+        <p>أَسأَل الله أن يُعيـــد عَلَينا  وعَلَيـكم <br>أُعــوَامًا مَدِيــدة بِصِحــة وعافيـة</p>
+        <span>١٤٤٧/١٠/١هـ</span><br>
+
+        <button class="btn" >طـرطـيـعـان</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+    const btn = document.querySelector('.btn');
+
+    btn.addEventListener('click', () => {
+        // إطلاق الطرطيعان (القصاصات الملونة)
+        confetti({
+            particleCount: 150, // عدد القطع
+            spread: 70,         // مدى انتشار الانفجار
+            origin: { y: 0.6 }, // نقطة الانطلاق (وسط الشاشة تقريباً)
+            colors: ['#c97b7b', '#9b6040', '#ffffff', '#f5ede4'] // ألوان تناسب تصميمك
+        });
+        
+        // إضافة تأثير اهتزاز بسيط للزر عند الضغط
+        btn.style.transform = 'scale(0.9)';
+        setTimeout(() => btn.style.transform = 'scale(1.1)', 100);
+    });
+ </script>
+</body>
+</html> 
